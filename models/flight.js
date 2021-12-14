@@ -1,5 +1,15 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+
+const destinationsSchema = new Schema({
+    content: String,
+ 
+  }, {
+    timestamps: true
+  });
+
+
+
 
 const flightSchema = new Schema ({
     airline: {
@@ -14,7 +24,7 @@ const flightSchema = new Schema ({
     flightNo: {
         type: Number,
         default: function(err) {
-            if ((flightNo < 10 )|| (flightNo > 9999)){
+            if ((flightNo < 0 )|| (flightNo > 9999)){
                 return false;
             }
         }
@@ -24,12 +34,10 @@ const flightSchema = new Schema ({
         default: function() {
             return new Date().toLocaleDateString; 
         }
-    },
-    
-})
+    }, 
 
-
-
+     
+});
 
 
 module.exports = mongoose.model("Flight", flightSchema);

@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/flights" method="POST">
+    <label>Airline</label>
+    <select name="airline">
+      <option type=String value="American">American</option>
+      <option type=String value="Southwest">Southwest</option>
+      <option type=String value="United">United</option>
+    </select>
+ 
+    <label>Airport</label>
+    <select name="airport">
+      <option type=String value="AUS">Austin-Bergstrom International Airport, Texas</option>
+      <option type=String value="DFW">Dallas Forth Worth International Airport, Texas</option>
+      <option type=String value="DEN" selected>Denver International Airport, Colorado</option>
+      <option type=String value="LAX">Los Angeles International Airport, California</option>
+      <option type=String value="SAN">San Diego International Airport, California</option>
+    </select>
+ 
+ 
+    <label>Flight Number:</label>
+  <input type="number" name="flightNo">
+  
+  <label>Departure Date</label>
+  <input type="date" name="departs">
+  
+  <input type="submit" value="Add Flight">
+</form>
+
+<%- include('../partials/footer') %>

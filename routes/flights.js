@@ -1,7 +1,19 @@
 var express = require('express');
 var router = express.Router();
-const moviesCtrl = require('../controllers/flights');
+const flightsCtrl = require('../controllers/flights');
 
-// All paths in this router have "/movies" prefixed to them
+// All paths in this router have "/flights" prefixed to them
+
+// GET "/flights" - Index Route
+router.get('/', flightsCtrl.index);
+
+//GET "flights/New" New Route
+router.get('/new', flightsCtrl.new);
+
+// POST "/flights" - Create Route
+router.post('/', flightsCtrl.create);
+
+// GET "/flights/:id" - Show Route
+router.get('/:id', flightsCtrl.show);
 
 module.exports = router;

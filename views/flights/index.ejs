@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<%- include('../partials/header') %>
 
-    <title>Something whatever</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+Simple placeholder for flights/index.ejs
+
 <a href="flights/new">New Flight</a> | <a href="/flights/show">Show Flights</a>
 
     <h1>Title Placeholder: views/index.ejs </h1>
-    <p>Welcome to  Title Placeholder</p>
+    <p>Welcome to  Broke-Ass Travel</p>
 
 <table border=1>
+  <thead></thead>
   <tr>
-    <th>Airline</td>
-    <th>Airport</td>
-    <th>Flight #</td>
-    <th>Departure</td>  
-  </tr>
+    <th>Airline</th>
+    <th>Airport</th>
+    <th>Flight #</th>
+    <th>Departure</th>  
+  </tr></thead>
+  <tbody>
+    <% flights.forEach(function(f) { %>
+      <tr>
+        <td><a href="/flights/<%= f._id %>"><%= f.airline %></a></td>
+        <td><%= f.airport %></td>
+        <td><%= f.flightNo %></td>
+        <td><%= f.departs %></td>
+        <!--<td><a href="/flights/<%= f._id %>">DETAILS</a></td>-->
+      </tr>
+      <% }); %>
+    </tbody>
+
 </table>
 
-
-  </body>
-</html>
+<%- include('../partials/footer') %>
