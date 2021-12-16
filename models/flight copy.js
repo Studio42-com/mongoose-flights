@@ -31,25 +31,15 @@ const flightSchema = new Schema ({
         type: String,       
         default: function() {
             return new Date().toLocaleDateString; 
-        },
-    },
-    arrivalAirport:  {
-        type: String,
-        enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
-        default: 'LAX'
-    },
-    arrives: {
-        type: String,       
-        default: function() {
-            return new Date().toLocaleDateString; 
-        }    
-    },
+        }
+          
+    }, 
     //timestamps: true,
     //The cityline adds the city array for populating with destination
-//    city: [{type: Schema.Types.ObjectId, ref: 'Destination'}],
+   city: [{type: Schema.Types.ObjectId, ref: 'Destination'}],
     
     
-    tickets: [ticketSchema],
+    tickets: [ticketSchema]
      
 });
 

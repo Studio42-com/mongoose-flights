@@ -3,7 +3,7 @@
    <p>Welcome to  Broke-Ass Travel</p>
 
 <table border=1>
-  <thead></thead>
+  <thead>Click flight for more details</thead>
   <tr>
     <th>Airline</th>
     <th>Airport</th>
@@ -11,7 +11,9 @@
     <th>Departure</th>  
   </tr></thead>
   <tbody>
-    <% flights.forEach(function(f) { %>
+    <% flights.forEach(function(f) { 
+        flights.find().sort({departs: 'asc'}) 
+          %>
       <tr>
         <td><a href="/flights/<%= f._id %>"><%= f.airline %></a></td>
         <td><%= f.airport %></td>
@@ -19,7 +21,8 @@
         <td><%= f.departs %></td>
         <!--<td><a href="/flights/<%= f._id %>">DETAILS</a></td>-->
       </tr>
-      <% }); %>
+      <% 
+    }); %>
     </tbody>
 
 </table>
