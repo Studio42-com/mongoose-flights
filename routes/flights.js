@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const flightsCtrl = require('../controllers/flights');
 
 // All paths in this router have "/flights" prefixed to them

@@ -1,0 +1,21 @@
+<!-- start destination menu list -->
+  <div>Destination Cities:</div>
+  <ul>
+    <%- flight.city.map(d => `<li>${d.destination} </li>`) %>
+  </ul>
+  <!-- end destination menu list -->
+
+</section>
+
+
+<!-- add destinations to flight -->
+<br>
+<form id="add-city-to-flight" action="/flights/<%= flight._id %>/destinations" method="POST">
+  <select name="destinationId">
+    <% performers.forEach(function(p) { %>
+      <option value="<%= d._id %>"><%= d.name %></option>
+    <% }); %>
+  </select>
+  <button type="submit">Add Destination to Flight</button>
+</form>
+

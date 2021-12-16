@@ -1,14 +1,15 @@
 <%- include('../partials/header') %>
 
 <div>Before adding, please ensure that the Destination City is not already in the following list:</div>
-<section id="badge-container">
+<hr><section id="badge-container">
   <% destinations.forEach(function(d) { %>
-    <article class="badge"><%= d.name %></article>
+    <article class="badge"><%= d.destination %></article>
   <% }) %>
 </section>
+<hr>
 <form id="add-destination-form" action="/destinations" method="POST">
   <label>Destination City</label>
-  <input type="text" name="destinations">
+  <input type="text" name="destination">
 
   <input type="submit" value="Add Destination">
 </form>

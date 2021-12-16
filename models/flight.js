@@ -1,16 +1,14 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const destinationsSchema = new Schema({
-    content: String,
- 
-  }, {
-    timestamps: true
+const ticketSchema = new Schema({
+    seat: {type: String},
+    price: {
+        type: String,
+        enum: ['160', '140', '120', '85']
+    },  
+ //   timestamps: true,
   });
-
-
-
-
 const flightSchema = new Schema ({
     airline: {
         type: String,
@@ -35,7 +33,7 @@ const flightSchema = new Schema ({
             return new Date().toLocaleDateString; 
         }
     }, 
-
+    tickets: [ticketSchema]
      
 });
 

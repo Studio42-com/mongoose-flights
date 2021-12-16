@@ -26,10 +26,7 @@ function create(req, res) {
       res.redirect('/destinations/new');
     });
 }
-  
-  
-  
-  
+
   // Destination.create(req.body, function (err, destination) {
   //   res.redirect('/destinations/new');
 //   });

@@ -1,4 +1,4 @@
-var Flight = require("../models/flight");
+const Flight = require("../models/flight");
 const Destination = require("../models/destination");
 
 
@@ -38,7 +38,8 @@ function index(req, res) {
 
   function show(req, res) {
     Flight.findById(req.params.id, function (err, flight) {
-      Destination.find({_id: {$nin: flight.destination}}, function(err, destinations) {
+      //Flight.findById(req.params.id).populate('destination').exec(function (err, flight) {
+      Destination.find({_id: {$nin: flight.city}}, function(err, destinations) {
         res.render("flights/show", { title: "Flight Detail", flight, destinations });
       });
     });
