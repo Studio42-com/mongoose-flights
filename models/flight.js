@@ -33,6 +33,8 @@ const flightSchema = new Schema ({
             return new Date().toLocaleDateString; 
         }
     }, 
+    //The cityline adds the city array for populating with destination
+    city: [{type: Schema.Types.ObjectId, ref: 'Destination'}],
     tickets: [ticketSchema]
      
 });
