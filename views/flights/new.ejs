@@ -19,10 +19,13 @@
  
  
     <label>Flight Number:</label>
-  <input type="number" name="flightNo">
+  <input type="number" min="10" max="9999" name="flightNo" >
   
-  <label>Departure Date</label>
+  <label>Departure Date:</label>
   <input type="date" name="departs">
+
+  <label>Departure time:</label>
+  <input type="time" name="departureTime" step="900">
   
   <label>Destination</label>
   <select name="arrivalAirport">
@@ -35,6 +38,9 @@
 
   <label>Arrival Date</label>
   <input type="date" name="arrives">
+
+  <label>Arrival time:</label>
+  <input type="time" name="arrivalTime">
 
   <input type="submit" value="Add Flight">
 </form>

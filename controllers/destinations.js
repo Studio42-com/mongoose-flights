@@ -15,7 +15,7 @@ function addDestination(req, res) {
     flight.city.push(req.body.destinationId); //changed from flightId to destinationId
     // lastly, save the parent document
     flight.save(function(err) {
-      if (err) console.log(err);
+      if (err) console.log(err);       
       res.redirect(`/flights/${flight._id}`);
     })
   });

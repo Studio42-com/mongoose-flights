@@ -4,9 +4,9 @@
   <div>Airport: </div><div><%= flight.airport %></div>
   <div>Airline: </div><div> <%= flight.airline %></div>
   <div>Flight #: </div><div> <%= flight.flightNo %></div>
-  <div>Departure Date:  </div><div><%= flight.departs %></div>
+  <div>Departure Date:  </div><div><%= flight.departs %>, <%= flight.departureTime %></div>
   <div>Arrival City:  </div><div><%= flight.arrivalAirport %></div>
-  <div>Arrival Date:  </div><div><%= flight.arrives %></div>
+  <div>Arrival Date:  </div><div><%= flight.arrives %>, <%= flight.arrivalTime %></div>
   
   
 </section>
@@ -50,10 +50,7 @@
           <td>$<%= t.price %></td>
         </tr>
       <% }); %>
-      <tr>
-        <td colspan="2"></td>
-        <td><strong>Totals:</strong></td>
-      </tr>
+      
     </tbody>
   </table>
 <% } else { %>

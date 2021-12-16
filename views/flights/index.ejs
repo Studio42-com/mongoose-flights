@@ -1,7 +1,5 @@
 <%- include('../partials/header') %>
 
-   <p>Welcome to  Broke-Ass Travel</p>
-
 <table border=1>
   <thead>Click flight for more details</thead>
   <tr>
@@ -11,18 +9,15 @@
     <th>Departure</th>  
   </tr></thead>
   <tbody>
-    <% flights.forEach(function(f) { 
-        flights.find().sort({departs: 'asc'}) 
-          %>
+    <% flights.forEach(function(f) {  %>
       <tr>
         <td><a href="/flights/<%= f._id %>"><%= f.airline %></a></td>
         <td><%= f.airport %></td>
         <td><%= f.flightNo %></td>
         <td><%= f.departs %></td>
-        <!--<td><a href="/flights/<%= f._id %>">DETAILS</a></td>-->
+
       </tr>
-      <% 
-    }); %>
+      <% }); %>
     </tbody>
 
 </table>

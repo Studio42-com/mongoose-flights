@@ -22,7 +22,7 @@ const flightSchema = new Schema ({
     flightNo: {
         type: Number,
         default: function(err) {
-            if ((flightNo < 0 )|| (flightNo > 9999)){
+            if ((flightNo < 10 )|| (flightNo > 9999)){
                 return false;
             }
         }
@@ -33,6 +33,14 @@ const flightSchema = new Schema ({
             return new Date().toLocaleDateString; 
         },
     },
+    departureTime: {
+        type: String,
+        default: function() {
+            return getTime();
+        }      
+    },
+
+    
     arrivalAirport:  {
         type: String,
         enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
@@ -43,6 +51,14 @@ const flightSchema = new Schema ({
         default: function() {
             return new Date().toLocaleDateString; 
         }    
+    },
+
+   arrivalTime: {
+    type: String,
+    default: function() {
+        return getTime();
+    }      
+
     },
     //timestamps: true,
     //The cityline adds the city array for populating with destination
