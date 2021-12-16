@@ -34,7 +34,9 @@ const flightSchema = new Schema ({
         }
     }, 
     //The cityline adds the city array for populating with destination
-    city: [{type: Schema.Types.ObjectId, ref: 'Destination'}],
+   city: [{type: Schema.Types.ObjectId, ref: 'Destination'}],
+    
+    
     tickets: [ticketSchema]
      
 });

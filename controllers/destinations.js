@@ -8,10 +8,11 @@ module.exports = {
 };
 
 function addDestination(req, res) {
-  // first find the flight we are trying to add a destination to
+  // first find the flight we are trying to add a city to
   Flight.findById(req.params.flightId, function(err, flight) {
-    // then, add the flight ID to the Destinations array
-    flight.destination.push(req.body.flightId);
+    // then, add the flight ID to the city array
+
+    flight.city.push(req.body.destinationId); //changed from flightId to destinationId
     // lastly, save the parent document
     flight.save(function(err) {
       if (err) console.log(err);

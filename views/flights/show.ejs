@@ -5,9 +5,33 @@
   <div>Airline: </div><div> <%= flight.airline %></div>
   <div>Flight #: </div><div> <%= flight.flightNo %></div>
   <div>Departure Date:  </div><div><%= flight.departs %></div>
-  
+</section>
+
+
+<!-- start destination menu list -->
+<div>Destination Cities:</div>
+<ul>
+  <%- flight.city.map(d => `<li>${d.destination} </li>`).join('') %> 
+  <!-- d.destination changed to d.city-->
+</ul>
+<!-- end destination menu list -->
+<!-- add destinations to flight -->
+
+<br>
+<form id="add-city-to-flight" action="/flights/<%= flight._id %>/destinations" method="POST">
+  <select name="destinationId">
+    <% destinations.forEach(function(d) { %>
+      <option value="<%= d._id %>"><%= d.destination %></option>
+    <% }); %>
+  </select>
+  <button type="submit">Add Destination to Flight</button>
+</form>
+
+
+
 <!-- Let visitor prepare to buy tickets -->
 
+<section id="show-page">
 <h2>Buy Tickets</h2>
 <br><br>
 
@@ -51,3 +75,7 @@
 <% } else { %>
   <h5>No tickets sold Yet</h5>
 <% } %>
+
+</section>
+<!-- End ticket purchasing section-->
+<%- include('../partials/footer') %>
